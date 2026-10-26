@@ -1,0 +1,39 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.h1{
+font-size: 44pt;
+color: #482020; 
+font-family: 'Aboreto';
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  background-image: url("images/popup-background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 500px;
+  max-width: 80%;
+
+}
+
+.modal.active{
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header{
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;}
