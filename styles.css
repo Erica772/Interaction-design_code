@@ -1,0 +1,228 @@
+:root {
+    --background: #E8DAD11C;
+    --heading: #482020;
+    --button: #A1523B;
+    --nav-text: #565656;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body{
+    background-color: var(--background);
+    font-family: 'Istok Web', sans-serif;
+}
+
+button{
+    background-color: var(--button);
+    padding-left: 26px;
+    padding-right: 26px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    font-family: 'Istok Web', sans-serif;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+button:not(.close-button):hover {
+    color: #482020;
+    border: 1px solid #482020;
+    background-color: #DFBAA775;
+}
+
+.close-button {
+    background: transparent;
+    border: none;
+    width: 24px;
+    height: 24px;
+    color: #000000;
+    position: absolute;
+    padding: 0;
+    top: 24px;
+    right: 24px;
+}
+
+h1{
+    font-size: 44px;
+    color: var(--heading);
+    font-family: 'Aboreto';
+    margin-bottom: 28px;
+    font-weight: 400;
+}
+
+.hero {
+    position: relative;
+    height: 936px;
+    background-image: url("images/sugar.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 584px 423px;
+}
+
+.hero-content {
+    width: 762px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 130px;
+    position: absolute;
+    top: 206px;
+}
+
+.hero img {
+    width: 663px;
+    position: absolute;
+    top: 71px;
+    left: 665px;
+    animation: fadeIn 2s ease-in-out;
+
+}
+
+.hero p {
+    font-size: 18px;
+    font-family: 'Istok Web', sans-serif;
+    line-height: 28px;
+    font-weight: 400;
+    color: #565656;
+    width: 579px;
+    margin-bottom: 65px;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border-radius: 0px;
+  z-index: 10;
+  background-color: white;
+  background-image: url("images/popup-background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 980px;
+  height: 647px;
+
+}
+
+.modal.active{
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-body{
+    width: 388px;
+    position: absolute;
+    left: 51px;
+    top: 264px;
+}
+
+.modal-body p{
+    font-size: 18px;
+    font-family: 'Istok Web', sans-serif;
+    color: #565656;
+    line-height: 28px;
+    margin-bottom: 78px;
+
+}
+
+.modal-header{
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  left: 51px;
+}
+
+.modal-header .title {
+    font-family: 'Aboreto';
+    color: var(--heading);
+    font-size: 36px;
+    width: 439px;
+    top: 144px;
+    left: 51px;
+    position: absolute;
+    font-weight: 400;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 90px;
+    background: linear-gradient(
+    to bottom,
+    rgba(232, 218, 209, 0.52) 0%,
+    rgba(232, 218, 209, 0.11) 100%
+);
+}
+
+.nav-icons{
+    display: flex;
+    justify-content: space-between;
+    width: 209px;
+    margin-right: 130px;
+}
+
+nav > img {
+    width: 240px;
+}
+
+  nav li {
+    font-size: 20px;
+    font-family: 'Istok Web';
+    font-weight: 400;
+    color: var(--nav-text);
+  }
+  
+  nav ul{
+    display: flex;
+    list-style: none;
+    width: 360px;
+    font-weight: 400;
+    justify-content: space-between;
+  }
+
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(183, 183, 183, 0.59);
+    z-index: 5;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.search span {
+    font-family: 'Istok Web', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--nav-text);
+}
+
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
